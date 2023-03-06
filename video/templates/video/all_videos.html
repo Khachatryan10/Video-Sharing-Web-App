@@ -1,0 +1,47 @@
+{% extends "video/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<form method="post">
+    {% csrf_token %}
+    <input type="search" id="searchInput" placeholder="Search" name="title">
+</form>
+
+<div id="videos_div_container">
+{% for video in videos %}
+<div id="v_div">
+    {% if video.title|length > 10 %}
+        <h2 id="videoTitle" title="{{ video.title }}">{{ video.title|slice:":10"|add:"..." }}</h2>
+    {% else %}
+        <h2 id="videoTitle">{{ video.title }}</h2>
+    {% endif %}
+<a href="{% url 'video' video.id %}" id="video_anchor" data-id1="{{ video.id }}" class="anchor">
+        <video id="videoSmall" muted data-id2="{{ video.id }}" preload="auto">
+            <source src="{{ video.video_link }}" type="video/mp4">
+        </video>
+</a>
+</div>
+{% endfor %}
+<div id="paginationDiv">
+{% if videos.has_previous %}
+    <a href="{{ videos.previous_page_number}}"><button class="paginationBtnPrev"><i class="fa-solid fa-chevron-left"></i></button></a>
+{% endif %}
+
+{% if videos.has_next %}
+    {% if videos.has_previous %}
+    <a href="{{ videos.next_page_number}}"><button class="paginationBtnNext"><i class="fa-solid fa-chevron-right"></i></button></a>
+    {% else %}
+    <a href="{{ videos.next_page_number}}" style="margin-left: 45px;"><button class="paginationBtnNext"><i class="fa-solid fa-chevron-right"></i></button></a>
+    {% endif %}
+{% endif %}
+</div>
+
+</div>
+
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'index.js' %}"></script>
+{% endblock %}

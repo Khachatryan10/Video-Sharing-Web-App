@@ -1,0 +1,54 @@
+{% extends "video/layout.html" %}
+{% load static %}
+
+
+{% block body %}
+
+{% for video in videoObj %}
+    <div id="video_div">
+        <h1 id="titleH1">{{ video.title }}</h1>
+    <video controls id="bigVideo">
+        <source src="{{ video.video_link }}" type="video/mp4">
+    </video>
+    <h3 >By {{ video.posted_by }}</h4>
+    {% if video.mood %}
+    <h3>Mood: {{ video.mood }}</h3>
+    {% endif %}
+    <h3 id="dateTimeH3">{{ video.date_and_time }}</h3>
+    <h3 id="likesCount" data-id8="{{ video.id }}"></h4>
+    {% if user.is_authenticated %}
+
+    {% if user.username == video.posted_by %}
+        <button class="delteVideoBtn" data-id10="{{ video.id }}">Delete</button>
+    {% endif %}
+    
+
+    <div id="deleteDiv" data-id11="{{ video.id }}">
+        <h2>Are you sure you want to delete this video ?</h2>
+        <button id="yesDelete" data-id12="{{ video.id }}">Yes</button>
+        <button id="noCancel" data-id13="{{ video.id }}">Cancel</button>
+
+    </div>
+
+    <button id="likeBtn" data-id6="{{ video.id }}" title="Like"><i class="fa-solid fa-thumbs-up"></i></button>
+    <button id="unlikeBtn" data-id7="{{ video.id }}" title="Unlike"><i class="fa-solid fa-thumbs-down"></i></button>
+    
+    <h1 id="comments" data-id5="{{ video.id }}">Comments</h1>
+    
+    <input type="text" id="commentInput" data-id3="{{ video.id }}" placeholder="Add Comment" name="content" >
+    
+    <button id="addComment" data-id4="{{ video.id }}">Add Comment</button>
+    <p style="display: none;" id="prgUsername">{{ user.username }}</p>
+    {% endif %}
+
+    <ui id="comments_ul">
+    </ui>
+    </div>
+{% endfor %}
+
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'index.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "video/layout.html" %}
+
+{% block body %}
+
+    <div id="register-login-div">
+        <form accept="{% url 'register_user' %}" method="post">
+            {% csrf_token %}
+
+            <input type="text" id="register-name" class="register-inputs" placeholder="Name" name="username" required maxlength="60" required>
+            <input type="text" id="register-email" class="register-inputs" placeholder="Email" name="email" required maxlength="80" required>
+            <input type="password" id="register-password" class="register-inputs" placeholder="Password" name="password" minlength="8" required>
+            <input type="password" id="register-confirmation" class="register-inputs" placeholder="Confirmation" name="confirmation" minlength="8" required>
+            <p id="errorPrg">{{ error }}</p>
+
+            <input type="submit" value="Register" id="registerBtn">
+        </form>
+    </div>
+
+{% endblock %}

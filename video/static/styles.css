@@ -1,0 +1,1051 @@
+:root {
+    --main-color1: rgb(71, 167, 241);
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    background-color: rgb(58, 58, 58);
+    scroll-behavior: smooth;
+    min-width: 280px;
+    color: var(--main-color1);
+}
+
+body::-webkit-scrollbar {
+    width: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgb(192, 192, 192);
+}
+
+
+#navbar {
+    display: flex;
+    width: 100%;
+    height: 55px;
+    margin-top: -16px;
+    background-color: rgb(33, 32, 32);
+}
+
+#nav-bottom-line {
+    height: 3px;
+    background: linear-gradient(90deg, rgb(255, 57, 57) 0%, var(--main-color1) 80%);
+}
+
+#navbar-ui {
+    display: flex;
+    gap: 50px;
+}
+
+.nav-anchor {
+    text-decoration: none;
+    list-style: none;
+    color: var(--main-color1)
+}
+
+#navbar-ui>li {
+    text-decoration: none;
+    list-style: none;
+    line-height: 38px;
+    color: var(--main-color1);
+    cursor: pointer;
+}
+
+span {
+    font-size: 14px;
+    color: azure;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: var(--main-color1);
+}
+
+.fa-video {
+    color: rgb(255, 57, 57);
+    margin-top: 8px;
+    font-size: 25px;
+    cursor: pointer;
+    animation: 4s move ease-in-out infinite;
+}
+
+
+@keyframes move {
+    0% {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+
+#register-login-div {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    width: 70%;
+}
+
+.register-inputs {
+    width: 100%;
+    text-indent: 5px;
+    height: 35px;
+    margin-bottom: 30px;
+}
+
+.register-inputs:focus {
+    outline: 1px solid rgb(0, 242, 255);
+    ;
+}
+
+
+#registerBtn {
+    width: 250px;
+    height: 35px;
+    font-size: 15px;
+    display: block;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    background-color: rgb(0, 126, 223);
+    transition: 1s;
+    cursor: pointer;
+}
+
+#registerBtn:hover {
+    background-color: var(--main-color1);
+}
+
+.login-inputs {
+    width: 100%;
+    text-indent: 5px;
+    height: 35px;
+    margin-bottom: 30px;
+}
+
+.login-inputs:focus {
+    outline: 1px solid rgb(0, 242, 255);
+}
+
+#loginBtn {
+    width: 250px;
+    height: 35px;
+    font-size: 15px;
+    display: block;
+    margin-left: auto;
+    margin-top: 40px;
+    background-color: rgb(0, 126, 223);
+    border-radius: 5px;
+    margin-right: auto;
+    transition: 1s;
+    cursor: pointer;
+}
+
+#loginBtn:hover {
+    background-color: var(--main-color1);
+}
+
+#errorPrg {
+    text-align: center;
+    color: rgb(255, 21, 0);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+#add_video_form {
+    margin-top: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+#add_video_form>.input_container>input {
+    width: 100%;
+    height: 35px;
+    margin-bottom: 25px;
+    text-indent: 5px;
+}
+
+#inputUrl {
+    color: rgb(0, 162, 255);
+}
+
+#audi-file {
+    width: 200px;
+    margin-top: 9px;
+}
+
+.input_container {
+    display: flex;
+    line-height: 40px;
+}
+
+#searchInput {
+    display: block;
+    margin-top: 20px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 35px;
+    text-indent: 5px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+
+}
+
+#add_video-btn {
+    width: 200px;
+    height: 35px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: 1s;
+    cursor: pointer;
+    background-color: rgb(0, 126, 223);
+}
+
+#add_video-btn:hover {
+    background-color: var(--main-color1);
+}
+
+#videos_div_container {
+    position: relative;
+    display: flex;
+    width: 90%;
+    gap: 50px;
+    margin-top: 100px;
+    flex-wrap: wrap;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+#v_div {
+    position: relative;
+}
+
+#videoTitle {
+    position: absolute;
+    top: -58px;
+    width: 70%;
+    text-align: center;
+    overflow-wrap: break-word;
+    cursor: pointer;
+    color: rgb(255, 95, 95);
+    left: 15%;
+}
+
+#videos_div {
+    display: block;
+    position: relative;
+    width: 350px;
+    cursor: pointer;
+    height: 197px;
+    border: 1px solid rgb(255, 21, 0);
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgb(41, 41, 41);
+    box-shadow: 0px 0px 17px 4px var(--main-color1);
+}
+
+@keyframes left-right {
+    0% {
+        transform: rotate(2deg);
+    }
+
+    50% {
+        transform: rotate(-2deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+#videos_div>div {
+    margin-top: 60%;
+}
+
+#paginationDiv {
+    display: flex;
+    margin-bottom: 50px;
+    gap: 4px;
+    width: 100%;
+    margin-left: 41.70%;
+}
+
+.paginationBtnPrev {
+    width: 120px;
+    height: 35px;
+    margin-left: 0;
+    border: 1px solid white;
+    cursor: pointer;
+    color: rgb(255, 80, 80);
+    background-color: rgb(33, 32, 32);
+}
+
+.paginationBtnNext {
+    width: 120px;
+    height: 35px;
+    border: 1px solid white;
+    cursor: pointer;
+    color: rgb(255, 80, 80);
+    background-color: rgb(33, 32, 32);
+}
+
+#videoSmall {
+    display: block;
+    border: 1px solid rgb(255, 21, 0);
+    width: 300px;
+    object-fit: cover;
+    height: 180px;
+    max-height: 180px;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 17px 4px var(--main-color1);
+}
+
+#videoSmall:hover {
+    animation: left-right 1s ease-in 1;
+}
+
+#video_anchor {
+    text-decoration: none;
+    color: var(--main-color1);
+}
+
+#page_song_div {
+    width: 100%;
+    text-align: center;
+}
+
+#pageSongImg {
+    width: 100%;
+    height: 30vh;
+}
+
+#video_div {
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#titleH1 {
+    text-align: center;
+}
+
+#dateTimeH3 {
+    text-align: left;
+}
+
+#bigVideo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+    max-height: 60vh;
+    width: 80%;
+    margin-bottom: 100px;
+    border-radius: 50px;
+    height: 50%;
+}
+
+#bigVideo::-webkit-media-controls-progress-bar {
+    background-color: rgb(255, 95, 95);
+}
+
+#comments_ul {
+    display: block;
+    font-size: 16px;
+    scroll-behavior: smooth;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 50px;
+    overflow-wrap: break-word;
+    min-height: fit-content;
+    max-height: 300px;
+    overflow-y: scroll;
+    border-radius: 15px;
+    background-color: rgb(0, 0, 0);
+}
+
+#comments_ul::-webkit-scrollbar {
+    width: 2px;
+}
+
+#comments_ul::-webkit-scrollbar-track {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#comments_ul::-webkit-scrollbar-thumb {
+    height: 50px;
+    border-radius: 5px;
+    background-color: rgb(192, 192, 192);
+}
+
+
+#comments_ul>li {
+    color: rgb(255, 95, 95);
+}
+
+#comments_ul>div>li {
+    color: rgb(255, 95, 95);
+}
+
+.pagePrg {
+    width: 50%;
+    margin-left: 28%;
+    color: rgb(255, 80, 80);
+}
+
+#commentInput {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+    font-size: 16px;
+    text-indent: 5px;
+    color: rgb(6, 209, 255);
+    background-color: rgb(66, 66, 66);
+    width: 50%;
+}
+
+#commentInput::placeholder {
+    color: rgb(225, 225, 225);
+    font-size: 14px;
+}
+
+#addComment {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    height: 35px;
+    width: 170px;
+    border-radius: 5px;
+    background-color: var(--main-color1);
+}
+
+#comments {
+    text-align: center;
+
+}
+
+#comment-li {
+    display: block;
+    margin-bottom: 25px;
+    color: rgb(0, 225, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#commenterId {
+    color: brown;
+}
+
+#commentContent {
+    margin-top: -15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(0, 225, 255);
+}
+
+#dataTimePrg {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    color: rgb(180, 180, 180);
+    ;
+    margin-left: 0%;
+}
+
+.pageText {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.delteVideoBtn {
+    display: block;
+    width: 100px;
+    margin-left: 78%;
+    margin-top: -180px;
+    cursor: pointer;
+    margin-bottom: 140px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(215, 77, 77);
+}
+
+#deleteDiv {
+    display: none;
+    position: fixed;
+    background-color: rgb(58, 58, 58);
+    ;
+    width: 80%;
+
+    z-index: 2;
+    margin-top: -60vh;
+    text-align: center;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid white;
+}
+
+#yesDelete {
+    margin-top: 30px;
+    width: 120px;
+    height: 30px;
+    background-color: rgb(247, 52, 52);
+    cursor: pointer;
+}
+
+#noCancel {
+    margin-top: 30px;
+    width: 120px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#likeBtn {
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    margin-top: -90px;
+    margin-bottom: 80px;
+    margin-left: 80%;
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid var(--main-color1);
+    transition: 1s;
+    font-size: 20px;
+}
+
+#unlikeBtn {
+    display: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    margin-top: -90px;
+    margin-bottom: 80px;
+    margin-left: 80%;
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid rgb(251, 40, 255);
+    transition: 1s;
+    font-size: 20px;
+}
+
+#likeBtn:hover,
+#unlikeBtn:hover {
+    background-color: transparent;
+}
+
+.fa-thumbs-up {
+    color: var(--main-color1);
+}
+
+.fa-thumbs-down {
+    color: rgb(251, 40, 255);
+}
+
+
+#likesCount {
+    color: rgb(255, 95, 95);
+}
+
+.prifileDiv {
+    text-align: center;
+}
+
+/* responsive  */
+@media only screen and (max-width: 941px) {
+    #navbar {
+        height: 70px;
+    }
+
+    #navbar {
+        width: 165px;
+        height: 100%;
+        margin: 0;
+        position: fixed;
+        top: 0;
+    }
+
+    .fa-video {
+        margin-bottom: 35px;
+        margin-left: 60px;
+        font-size: 16px;
+    }
+
+    span {
+        font-size: 16px;
+    }
+
+    #navbar-ui {
+        display: block;
+        margin-left: -25px;
+    }
+
+    #nav-bottom-line {
+        position: fixed;
+        top: 0;
+        height: 100%;
+        margin-left: 165px;
+        width: 3px;
+        background: linear-gradient(180deg, rgb(255, 57, 57) 0%, var(--main-color1) 80%);
+    }
+
+    #add_video_form {
+        margin-left: 32%;
+    }
+
+    #navbar-ui>li {
+        display: flex;
+        line-height: 10px;
+        font-size: 16px;
+        margin-bottom: 40px;
+        gap: 15px;
+    }
+
+
+    #register-login-div {
+        display: block;
+        margin-left: 35%;
+        width: 50%;
+    }
+
+    .register-inputs {
+        margin-top: 15px;
+        width: 100%;
+        height: 30px;
+    }
+
+    .login-inputs {
+        margin-top: 15px;
+        width: 100%;
+        height: 30px;
+    }
+
+    #add_video_form>.input_container>input {
+        width: 100%;
+        height: 30px;
+        margin-bottom: 25px;
+    }
+
+    #registerBtn,
+    #loginBtn,
+    #add_video-btn {
+        margin-top: 5px;
+        width: 50%;
+        height: 30px;
+    }
+
+
+    #videos_div_container {
+        width: 50%;
+        margin-left: 36%;
+        margin-bottom: 300px;
+    }
+
+
+    #videoSmall {
+        height: 170px;
+        border-radius: 10px;
+    }
+
+
+    #titleH1 {
+        font-size: 22px;
+    }
+
+    #video_div {
+        display: block;
+        width: 75%;
+        margin-left: 25%;
+    }
+
+    #video_div>h3 {
+        margin-left: 10%;
+        font-size: 14px;
+    }
+
+    #comments {
+        font-size: 21px;
+        margin-top: 50px;
+    }
+
+    #commentInput {
+        height: 35px;
+        font-size: 15px;
+    }
+
+    #addComment {
+        height: 25px;
+        width: 120px;
+    }
+
+    #comments_ul {
+        margin-left: 15%;
+        font-size: 15px;
+        width: 70%;
+    }
+
+    .pageText {
+        margin-left: 20%;
+        font-size: 22px;
+    }
+
+    .delteVideoBtn {
+        width: 90px;
+        margin-left: 76%;
+        margin-top: -180px;
+        margin-bottom: 140px;
+        height: 28px;
+        font-size: 15px;
+    }
+
+    #deleteDiv {
+        width: 60%;
+        margin-top: -60vh;
+        text-align: center;
+        height: 200px;
+        font-size: 15px;
+        margin-left: 50px;
+    }
+
+    #yesDelete {
+        margin-top: 30px;
+        width: 100px;
+        height: 25px;
+    }
+
+    #noCancel {
+        margin-top: 30px;
+        width: 100px;
+        height: 25px;
+    }
+
+
+    #likeBtn {
+        width: 40px;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    #unlikeBtn {
+        width: 40px;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    .prifileDiv {
+        font-size: 15px;
+        margin-left: 165px;
+    }
+
+    #searchInput {
+        height: 35px;
+        width: 350px;
+        margin-left: 32%;
+    }
+
+    .pagePrg {
+        margin-bottom: -50px;
+        width: 50%;
+        margin-left: 37%;
+        font-size: 15px;
+    }
+
+    #paginationDiv {
+        width: 240px;
+        margin-left: 10%;
+    }
+
+    .paginationBtnPrev {
+        width: 120px;
+        height: 35px;
+    }
+
+    .paginationBtnNext {
+        width: 120px;
+        height: 35px;
+    }
+
+}
+
+
+@media only screen and (max-width: 530px) {
+    #navbar {
+        height: 70px;
+    }
+
+    #navbar {
+        width: 100px;
+        height: 100%;
+        margin: 0;
+        position: fixed;
+        top: 0;
+    }
+
+    .fa-video {
+        margin-bottom: 35px;
+        margin-left: 28px;
+        font-size: 18px;
+    }
+
+    span {
+        font-size: 8px;
+    }
+
+    #navbar-ui {
+        display: block;
+        margin-left: -25px;
+    }
+
+    #nav-bottom-line {
+        position: fixed;
+        top: 0;
+        height: 100%;
+        margin-left: 100px;
+        width: 2px;
+        background: linear-gradient(180deg, rgb(255, 57, 57) 0%, var(--main-color1) 80%);
+    }
+
+    #navbar-ui>li {
+        display: flex;
+        line-height: 10px;
+        font-size: 11px;
+        margin-bottom: 40px;
+        gap: 15px;
+    }
+
+    #register-login-div {
+        display: block;
+        margin-left: 38%;
+        width: 50%;
+    }
+
+    .register-inputs {
+        margin-top: 15px;
+        width: 100%;
+        font-size: 14px;
+        height: 25px;
+    }
+
+    .login-inputs {
+        margin-top: 15px;
+        width: 100%;
+        font-size: 14px;
+        height: 25px;
+    }
+
+    #registerBtn,
+    #loginBtn,
+    #add_video-btn {
+        margin-top: 5px;
+        width: 70%;
+        height: 27px;
+    }
+
+    #add_video_form {
+        margin-left: 34%;
+    }
+
+    #add_video_form>.input_container>input {
+        width: 100%;
+        height: 20px;
+        font-size: 10px;
+        margin-bottom: 25px;
+    }
+
+    #videos_div_container {
+        width: 45%;
+        margin-left: 39%;
+        margin-bottom: 300px;
+    }
+
+    #videos_div {
+        width: 187px;
+        height: 105px;
+        font-size: 18px;
+        position: relative;
+    }
+
+    #video_div>h3 {
+        margin-left: 20%;
+        font-size: 12px;
+    }
+
+    #videoSmall {
+        width: 200px;
+        height: 115px;
+        border-radius: 10px;
+    }
+
+    #bigVideo {
+        border-radius: 1px;
+        width: 69%;
+        margin-left: 50px;
+        height: 30vh;
+    }
+
+    #commentInput {
+        height: 18px;
+        font-size: 12px;
+    }
+
+    #commentInput::placeholder {
+        font-size: 12px;
+    }
+
+    #addComment {
+        height: 20px;
+        font-size: 12px;
+    }
+
+    .pageText {
+        margin-left: 20%;
+        font-size: 15px;
+        margin-left: 100px;
+    }
+
+    .delteVideoBtn {
+        width: 60px;
+        margin-left: 62%;
+        height: 22px;
+        font-size: 12px;
+    }
+
+    #deleteDiv {
+        width: 60%;
+        margin-top: -40vh;
+        text-align: center;
+        font-size: 12px;
+        margin-left: 30px;
+    }
+
+    #yesDelete {
+        width: 80px;
+        height: 22px;
+    }
+
+    #noCancel {
+        width: 80px;
+        height: 22px;
+    }
+
+
+
+    #likeBtn {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+        margin-left: 70%;
+    }
+
+    #unlikeBtn {
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+        margin-left: 70%;
+    }
+
+
+
+    .prifileDiv {
+        font-size: 8px;
+        margin-left: 100px;
+    }
+
+    #searchInput {
+        height: 30px;
+        width: 180px;
+        margin-left: 42%;
+    }
+
+    .pagePrg {
+        width: 50%;
+        margin-left: 40%;
+        font-size: 12px;
+    }
+
+    #paginationDiv {
+        width: 240px;
+        margin-left: 10%;
+    }
+
+    .paginationBtnPrev {
+        width: 120px;
+        height: 35px;
+        border: 1px solid white;
+    }
+
+    .paginationBtnNext {
+        width: 120px;
+        height: 35px;
+    }
+
+    #paginationDiv {
+        width: 240px;
+        margin-left: 15%;
+    }
+
+    .paginationBtnPrev {
+        width: 80px;
+        height: 25px;
+    }
+
+    .paginationBtnNext {
+        width: 80px;
+        height: 25px;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    #titleH1 {
+        margin-left: 28px;
+        font-size: 18px;
+    }
+
+    #comments_ul {
+        width: 140px;
+        margin-left: 20%;
+    }
+
+    #comments {
+        margin-left: 15%;
+    }
+
+    #commentInput {
+        margin-left: 32%;
+    }
+
+    #addComment {
+        margin-left: 41%;
+        width: 80px;
+        font-size: 10px;
+    }
+
+    #deleteDiv {
+        margin-left: 34px;
+    }
+
+    .prifileDiv {
+        margin-left: 110px;
+    }
+}

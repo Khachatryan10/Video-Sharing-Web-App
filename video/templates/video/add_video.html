@@ -1,0 +1,26 @@
+{% extends "video/layout.html" %}
+{% block body %}
+    {% if user.is_authenticated %}
+
+<h1 class="pageText">Add video</h1>
+<p class="pagePrg">This web app only accepts videos from google drive, so your url must start with  'https://drive.google.com/uc?export=download&id=' then your video id. The input is prefilled for you. </p>
+
+<form action="{% url 'add_video' %}"  method="post" id="add_video_form">
+    {% csrf_token %}
+
+    <div class="input_container">*&nbsp;&nbsp;<input type="text" placeholder="Title" name="title" maxlength="50" required></div> 
+    <div class="input_container">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="Mood" name="mood"></div> 
+    <div class="input_container">*&nbsp;&nbsp;<input type="text" name="video_url" id="inputUrl" placeholder="Video Url" required value="https://drive.google.com/uc?export=download&id="></div> 
+    <p id="errorPrg">{{ error }}</p>
+
+    <button id="add_video-btn">Add</button>
+</form>
+
+{% else %}
+
+<h1 style="text-align: center;">Please login, in order to be able to add a video</h1>
+
+{% endif %}
+
+
+{% endblock %}

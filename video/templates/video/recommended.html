@@ -1,0 +1,40 @@
+{% extends "video/layout.html" %}
+{% load static %}
+
+{% block body %}
+    {% if user.is_authenticated %}
+
+{% if fav_videos %}
+    <h1 class="pageText">Recommended videos</h1>
+{% else %}
+    <h1 class="pageText">There aren't recommended videos</h1>
+{% endif %}
+
+
+<div id="videos_div_container">
+{% for video in fav_videos %}
+<div id="v_div">
+    {% if video.title|length > 10 %}
+        <h2 id="videoTitle">{{ video.title|slice:":10"|add:"..." }}</h2>
+    {% else %}
+        <h2 id="videoTitle">{{ video.title }}</h2>
+    {% endif %}
+<a href="{% url 'video' video.id %}" id="video_anchor" data-id1="{{ video.id }}" class="anchor">
+        <video id="videoSmall" muted data-id2="{{ video.id }}">
+            <source src="{{ video.video_link }}" type="video/mp4">
+        </video>
+</a>
+</div>
+{% endfor %}
+</div>
+
+{% else %}
+<h1 style="text-align: center;">Please login, in order to be able to see recommended videos</h1>
+
+{% endif %}
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'index.js' %}"></script>
+{% endblock %}
